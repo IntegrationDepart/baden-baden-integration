@@ -1,0 +1,121 @@
+{
+  "translation": {
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "rooms": "Rooms",
+      "gallery": "Gallery",
+      "contact": "Contact",
+      "news": "News"
+    },
+    "lang": {
+      "defualt": "English",
+      "ru": "russian",
+      "en": "english",
+      "uz": "uzbek"
+    },
+    "btn": {
+      "more": "More",
+      "moreAll": "View All",
+      "booking": "Book Now"
+    },
+    "modal": {
+      "questionCorrect": "Your request has been accepted",
+      "contactYou": "We will contact you"
+    },
+    "footer": {
+      "miniFooter": {
+        "allrights": "All rights reserved.",
+        "siteCreated": "Site created by:"
+      },
+      "ourSocials": "Our socials:"
+    },
+    "contact": {
+      "title": "Our Contacts"
+    },
+    "rooms": {
+      "title": "Our Rooms",
+      "priceSymbol": "UZS / per night"
+    },
+    "index": {
+      "headerBooking": {
+        "checkIn": "Check-in",
+        "entryDay": "Entry",
+        "departure": "Check-out",
+        "departureDay": "Departure",
+        "numberOfGuests": "Number of Guests",
+        "room": "Room",
+        "adults": "adults",
+        "children": "children",
+        "roomNumber": "rooms",
+        "forChildren": "children (0-11 years old)",
+        "typeOfNumber": "Type of Room",
+        "choose": "Choose"
+      },
+      "section2": {
+        "title": "Room Types"
+      },
+      "section4": {
+        "title": "Nearby Landmarks",
+        "km": "km",
+        "m": "m"
+      }
+    },
+    "booking": {
+      "headerTitle": "Booking",
+      "headerSubtitle": "This booking is not confirmed. We will review your request and confirm the booking.",
+      "form": {
+        "title": "Enter Details",
+        "arrival": "Arrival Date",
+        "departure": "Departure Date",
+        "adults": "Adults",
+        "children": "Children",
+        "surnameEN": "Surname (in English)",
+        "nameEN": "Name (in English)",
+        "number": "Phone Number",
+        "email": "Email"
+      },
+      "request": {
+        "title": "Contact Information for Requests",
+        "textarea": "Enter your request"
+      },
+      "cancelRule": {
+        "title": "Cancellation Rules",
+        "text": "- Cancellation or modification of booking is allowed until 12:00, 3 days prior to arrival. If you cancel or modify after this time or no-show on the arrival date, a penalty equivalent to the cost of the first night of your stay will be charged.",
+        "text2": "- For cancellation of booking, contact the room reservation department.",
+        "phone": "Phone number"
+      }
+    },
+    "reviews": {
+      "title": "Review",
+      "surnameEN": "Full Name (in English)",
+      "country": "Country",
+      "countryPlaceholder": "Enter your country",
+      "notice": "About Us Notification",
+      "noticeTitle": "write the title",
+      "review": "Write a review",
+      "reviewClients": "Client Reviews",
+      "reviewDate": "Extended time:"
+    },
+    "roomInner": {
+      "descr": "Description",
+      "comfortsTitle": "Room Amenities",
+      "infosTitle": "What's Included in This Room?",
+      "bookingTitle": "Booking:",
+      "services": {
+        "service1": "Bathroom",
+        "service2": "Breakfast",
+        "service3": "Coffee/Tea",
+        "service4": "Slippers",
+        "service5": "Hairdryer",
+        "service6": "Air Conditioning",
+        "service7": "TV",
+        "service8": "Wifi"
+      },
+      "areaSymbol": "m²",
+      "humenSymbol": "people",
+      "bedromSymbol": "bedrooms",
+      "filterSymbols": "baths"
+    }
+  }
+}

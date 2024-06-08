@@ -1,0 +1,124 @@
+{
+  "translation": {
+    "navbar": {
+      "home": "Bosh sahifa",
+      "about": "Biz haqimizda",
+      "rooms": "Xonalar",
+      "gallery": "Gallereya",
+      "contact": "Aloqa",
+      "news": "Yangiliklar"
+    },
+    "lang": {
+      "defualt": "O'zbek",
+      "ru": "rus",
+      "en": "ingliz",
+      "uz": "o'zbek"
+    },
+    "notFound": {
+      "text": "Hona topilmadi"
+    },
+    "btn": {
+      "more": "Batafsil",
+      "moreAll": "Hammasini ko'rish",
+      "booking": "Band qilish"
+    },
+    "modal": {
+      "questionCorrect": "Sizning so'rovingiz qabul qilindi",
+      "contactYou": "Biz siz bilan bog'lanamiz"
+    },
+    "footer": {
+      "miniFooter": {
+        "allrights": "Barcha huquqlar himoyalangan.",
+        "siteCreated": "Sayt yaratildi:"
+      },
+      "ourSocials": "Bizning ijtimoiy tarmoqlar:"
+    },
+    "contact": {
+      "title": "Bizning aloqalar"
+    },
+    "rooms": {
+      "title": "Bizning xonalar",
+      "priceSymbol": "UZS / bir tun uchun"
+    },
+    "index": {
+      "headerBooking": {
+        "checkIn": "Kirish",
+        "entryDay": "Kelish",
+        "departure": "Chiqish",
+        "departureDay": "Jo'nab ketish",
+        "numberOfGuests": "Mehmonlar soni",
+        "room": "Xona",
+        "adults": "kishi",
+        "children": "bola",
+        "roomNumber": "xonalarni",
+        "forChildren": "bola (0-11 yosh)",
+        "typeOfNumber": "Xona turi",
+        "choose": "Tanlash"
+      },
+      "section2": {
+        "title": "Xona turatlari"
+      },
+      "section4": {
+        "title": "Yaqin manzillar",
+        "km": "km",
+        "m": "m"
+      }
+    },
+    "booking": {
+      "headerTitle": "Band qilish",
+      "headerSubtitle": "Ushbu band qabul qilinmagan. Biz so'rovingizni ko'rib chiqamiz va band qilishni tasdiqlaymiz.",
+      "form": {
+        "title": "Ma'lumotlarni kiriting",
+        "arrival": "Kelish sanasi",
+        "departure": "Jo'nab ketish sanasi",
+        "adults": "Kattalar",
+        "children": "Bolalar",
+        "surnameEN": "Familiya (inglizcha)",
+        "nameEN": "Ism (inglizcha)",
+        "number": "Telefon raqami",
+        "email": "Elektron pochta"
+      },
+      "request": {
+        "title": "So'rov uchun aloqa ma'lumotlari",
+        "textarea": "So'rovingizni kiriting"
+      },
+      "cancelRule": {
+        "title": "Bekor qilish qoidalari",
+        "text": "- Bandni bekor qilish yoki o'zgartirish 3 kun oldin soat 12:00 gacha ruxsat beriladi. Agar siz ushbu vaqtdan so'ng bekor qilsangiz yoki o'zgartirsangiz yoki kirish kunida kelmasangiz (kirishni bekor qilsangiz), sizning tushurilishi kerak bo'lgan to'lovi, sizning qolgan kunlarning birinchi tunining narxi qo'llaniladi.",
+        "text2": "- Bandni bekor qilish uchun xona band qilish bo'limiga murojaat qiling.",
+        "phone": "Telefon raqami"
+      }
+    },
+    "reviews": {
+      "title": "Izoh",
+      "surnameEN": "Familiya (ingliz tilida)",
+      "country": "Davlat",
+      "countryPlaceholder": "Sizning davlatingizni kiriting",
+      "notice": "Biz haqimizda xabardorlik",
+      "noticeTitle": "nomini yozing",
+      "review": "Izoh qoldiring",
+      "reviewClients": "Mijozlar izohlari",
+      "reviewDate": "Sifatli vaqt:"
+    },
+    "roomInner": {
+      "descr": "Tavsif",
+      "comfortsTitle": "Xona qulayliklari",
+      "infosTitle": "Bu xonaga nima kiritilgan?",
+      "bookingTitle": "Band qilish:",
+      "services": {
+        "service1": "Vannaxona",
+        "service2": "Nonushta",
+        "service3": "Kofe/ Choy",
+        "service4": "Shippak",
+        "service5": "Toza havo",
+        "service6": "Konditsioner",
+        "service7": "Televizor",
+        "service8": "Wifi"
+      },
+      "areaSymbol": "m²",
+      "humenSymbol": "kishi",
+      "bedromSymbol": "yotoqxona",
+      "filterSymbols": "hamam"
+    }
+  }
+}

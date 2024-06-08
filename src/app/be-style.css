@@ -1,0 +1,54 @@
+#block-search, #block-search * {
+    box-sizing: border-box;
+}
+
+#block-search {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #012350;
+}
+
+#block-search.be-main {
+    background: rgba(1, 35, 80, 1);
+    border: 1px solid #FFFFFF;
+}
+
+@media screen and (min-width: 1024px) and (min-height: 600px) {
+    #block-search.be-main {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: -280px auto 0;
+        background: rgba(1, 35, 80, 0.6);
+    }
+}
+
+.be-container {
+    padding: 10px 30px;
+}
+
+#be-reputation-widget-mobile {
+    width: 100%;
+    max-width: 148px;
+    margin: 0 auto 30px;
+}
+
+#be-reputation-widget {
+    display: none;
+}
+
+@media screen and (min-width: 1410px) and (min-height: 600px) {
+    #be-reputation-widget-mobile {
+        display: none;
+    }
+
+    #be-reputation-widget {
+        position: absolute !important;
+        top: 0;
+        right: 100%;
+        display: block;
+        width: 100%;
+        max-width: 118px;
+        margin-right: 20px;
+    }
+}
