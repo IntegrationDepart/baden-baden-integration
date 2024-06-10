@@ -6,7 +6,6 @@ import 'moment/locale/uz'
 import { useTranslation } from 'react-i18next'
 import {useDispatch, useSelector} from "react-redux";
 import {changleTimeBooking} from "@/slice/booking";
-import {langSelect} from "@/helper";
 
 
 
@@ -15,20 +14,13 @@ import {langSelect} from "@/helper";
 const HeaderBooking = () => {
   moment.locale('uz')
   const {t} = useTranslation()
-  const {lang} = useSelector(state => state.langSlice)
   const dispatch = useDispatch();
   const { timeBooking ,typeBooking ,countRoomBooking ,countOlderBooking ,countChildrenBooking} = useSelector(
       (state) => state.bookingSlice);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
-  // const { data: typeRoom  , refetch: typeRoomRefetch} = useQuery("typeRoom", () =>
-  //     apiService.getData( 'rooms-simple/') , { enabled: false}
-  // );
 
-  // useEffect(() =>{
-  //   typeRoomRefetch()
-  // } , [])
 
   const handleDateChange = (date) => {
     dispatch(changleTimeBooking([`${date[0]}` ,`${date[1]}`]))
