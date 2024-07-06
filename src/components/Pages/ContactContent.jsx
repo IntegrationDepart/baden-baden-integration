@@ -23,19 +23,19 @@ const ContactContent = ({contact}) => {
                 <span className="address "> {langSelect(lang ,contact?.address_ru , contact?.address_en ,contact?.address_uz )} </span>
               </div>
               <a data-aos={'fade-up'} data-aos-delay={50} href={`tel:${contact?.phone1}`}
-                 className="gap-1 md:gap-4 flex flex-col items-center text-lg text-text font-jost font-normal group">
+                 className="gap-1 md:gap-3 flex flex-col items-center text-lg text-text font-jost font-normal group">
                 <FaPhoneAlt className={'text-xl md:text-3xl text-currentBlue group-hover:text-currentBlue/90 duration-200'} />
                   <span>{ formatPhoneNumber(contact?.phone1) }</span>
                   <span>{formatPhoneNumber(contact?.phone2)}</span>
 
               </a>
-              <a data-aos={'fade-up'} data-aos-delay={50} href={`mailto:${contact?.email}`} target="_blank"
-                 className="gap-1 md:gap-4 flex flex-col items-center text-lg text-text font-jost font-normal group">
+              <div data-aos={'fade-up'} data-aos-delay={50}
+                 className="gap-1 md:gap-3 flex flex-col items-center text-lg text-text font-jost font-normal group">
                 <IoMail className={'text-xl md:text-3xl text-currentBlue group-hover:text-currentBlue/90 duration-200'} />
-                <span>{contact?.email1}</span>
-                <span>{contact?.email2}</span>
+                <a href={`mailto:${contact?.email1}`} target="_blank">{contact?.email1}</a>
+                <a href={`mailto:${contact?.email2}`} target="_blank">{contact?.email2}</a>
 
-              </a>
+              </div>
             </div>
             <div
                 className="w-full md:w-1/2 border-t-[1px] border-light text-first font-jost font-medium gap-6 md:gap-10 flex pt-5 md:pt-10 justify-center text-lg sm:text-xl">

@@ -24,8 +24,8 @@ const Footer = () => {
         <footer className="w-full bg-currentBlue bg-[url('/image/bg-noise.jpg')]">
             <div className="container">
                 <div className=" py-6 md:py-10 flex lg:flex-row flex-col gap-10 lg:gap-20 xl:gap-24 2xl:gap-32 items-center lg:items-start  font-jost">
-                    <Link href="/" className="w-36 aspect-[4/3] md:w-40 flex-shrink-0  block">
-                        <img src="/image/baden-baden-logo-white 1.png" alt="" className="w-full h-full object-contain"/>
+                    <Link href="/" className="w-44 h-auto  md:w-60 flex-shrink-0  block relative">
+                        <img src="/image/hotel-pro-white.png" alt="hotel-pro" className="w-full h-full object-contain"/>
                     </Link>
                     <div
                         className="grid grid-cols-3 sm:grid-cols-6  gap-x-6  sm:gap-x-10 md:gap-x-12 lg:gap-x-24 xl:gap-x-36 text-white font-jost">
@@ -34,29 +34,43 @@ const Footer = () => {
                                 <a href={`tel:${contact?.phone1}`} className="flex gap-2 items-center">
                                     <LuPhone className={'text-xl shrink-0'}/>
 
-                                    <span className={'hover:border-b hover:border-white border-b border-transparent duration-300'}>
+                                    <span
+                                        className={'hover:border-b hover:border-white border-b border-transparent duration-300'}>
                                     {formatPhoneNumber(contact?.phone1)}
                                     </span>
                                 </a>
                             </li>
                             <li>
-                                <a href={`mailto:${contact?.email}`} className="flex gap-2 items-center">
+                                <a href={`mailto:${contact?.email1}`} className="flex gap-2 items-center">
                                     <MdOutlineMailOutline className={'text-xl shrink-0'}/>
-                                    <span className={'hover:border-b hover:border-white border-b border-transparent duration-300 break-all'}>
+                                    <span
+                                        className={'hover:border-b hover:border-white border-b border-transparent duration-300 break-all'}>
                                     {contact?.email1}
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href={`mailto:${contact?.email2}`} className="flex gap-2 items-center">
+                                    <MdOutlineMailOutline className={'text-xl shrink-0'}/>
+                                    <span
+                                        className={'hover:border-b hover:border-white border-b border-transparent duration-300 break-all'}>
+                                    {contact?.email2}
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <p className="flex gap-2 items-center">
                                     <SlLocationPin className={'text-xl shrink-0'}/>
-                            <span>{langSelect(lang ,contact?.address_ru , contact?.address_en ,contact?.address_uz )}</span></p>
+                                    <span>{langSelect(lang, contact?.address_ru, contact?.address_en, contact?.address_uz)}</span>
+                                </p>
                             </li>
                         </ul>
                         <ul className=" whitespace-nowrap flex flex-col gap-5 min-[360px]:mb-2 md:mb-0 order-2 font-medium ">
                             {
                                 navLink.slice(0, 3).map((link, ind) => (
-                                        <li key={ind}><Link href={link.link} className={'hover:border-b hover:border-white border-b border-transparent duration-300'}>{t(`${link.text}`)} </Link></li>
+                                        <li key={ind}><Link href={link.link}
+                                                            className={'hover:border-b hover:border-white border-b border-transparent duration-300'}>{t(`${link.text}`)} </Link>
+                                        </li>
                                     )
                                 )
                             }

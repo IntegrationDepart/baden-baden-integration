@@ -119,20 +119,12 @@ const Navbar = () => {
                         </ul>
                         <Link href="/"
                               className="  block static md:absolute left-1/2 top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
-                            <div className={' w-[200px] h-[50px] md:w-[240px] md:h-[60px] flex gap-3 items-center'}>
-                                <div className={'relative  w-[90px] h-[50px] md:w-[100px] md:h-[60px]'}>
-                                    <ImageUi
-                                        alt={'baden baden logo'}
-                                        src="/image/baden-baden-logo-white 1.png"
-                                        objectFitContain={true}/>
-                                </div>
-                                <div className={'relative  w-[90px]  md:w-[100px] h-[20px]'}>
-                                    <ImageUi
-                                        alt={'baden baden logo'}
-                                        src="/image/hotel-pro.svg"
-                                        objectFitContain={true}/>
-                                </div>
-
+                            <div
+                                className={'h-[50px] w-[90px] md:w-[200px] md:h-[60px] flex gap-3 items-center realative'}>
+                                <ImageUi
+                                    alt={'baden baden logo'}
+                                    src="/image/baden-baden-logo-white 1.png"
+                                    objectFitContain={true}/>
                             </div>
 
                         </Link>
