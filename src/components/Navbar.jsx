@@ -21,7 +21,7 @@ const Navbar = () => {
         setSidebar(!sidebar)
     }
 
-    const onScroll = useCallback(event => {
+    const onScroll = useCallback(() => {
         const {scrollY} = window;
         if (scrollY > 20) {
             setIsScroll(true)

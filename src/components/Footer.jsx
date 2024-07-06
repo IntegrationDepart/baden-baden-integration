@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {navLink} from "@/constants/routeConfig";
-import {FaFacebookF, FaTwitter} from "react-icons/fa";
+import {FaFacebookF} from "react-icons/fa";
 import {RiInstagramLine} from "react-icons/ri";
 import {LuPhone} from "react-icons/lu";
 import {MdOutlineMailOutline} from "react-icons/md";
@@ -12,6 +12,7 @@ import {BiLogoTelegram} from "react-icons/bi";
 import {useQuery} from "react-query";
 import apiService from "@/service/api";
 import {usePathname} from "next/navigation";
+import {useEffect} from "react";
 
 const Footer = () => {
     const {t} = useTranslation()
@@ -20,6 +21,10 @@ const Footer = () => {
     const { data: contact  , refetch: contactRefetch,  } = useQuery("getContact", () =>
         apiService.getData( '/about/contact') , { enabled: false}
     );
+
+    useEffect(() => {
+        contactRefetch()
+    } , [])
     return (
         <footer className="w-full bg-currentBlue bg-[url('/image/bg-noise.jpg')]">
             <div className="container">
