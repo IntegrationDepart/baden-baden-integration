@@ -40,10 +40,6 @@ const Page = ({roomCatalog}) => {
     const {t} = useTranslation()
     const {lang} = useSelector(state => state.langSlice)
     const dispatch = useDispatch();
-    const {timeBooking, typeBooking, countRoomBooking, countOlderBooking, countChildrenBooking} = useSelector(
-        (state) => state.bookingSlice);
-    const [startDate, setStartDate] = useState(null);
-    const [endDate, setEndDate] = useState(null);
     const {id} = useParams()
     const {data: room, refetch: refetchRoom, isLoading: isLoadingRoom} = useQuery(["room", id], () =>
         apiService.getDataByID('/rooms', id), {enabled: false}
@@ -145,8 +141,8 @@ const Page = ({roomCatalog}) => {
             <section className=" mb-7 sm:mb-14 md:mb-20 mt-5 md:mt-10">
                 <div className="container space-y-5 md:space-y-10">
                     <SwiperInner images={room?.images} title={langSelect(lang ,room?.title_ru , room?.title_en ,room?.title_uz )}/>
-                    <div className="grid grid-cols-1 md:grid-cols-3  gap-5">
-                        <div className="col-span-2 flex flex-col gap-5 md:gap-10">
+                    <div className="grid grid-cols-1  gap-5">
+                        <div className="col-span-1 flex flex-col gap-5 md:gap-10">
                             <div className="flex flex-col gap-3 md:gap-5">
                                 <h2 className="font-normal text-currentBlue text-2xl md:text-3xl lg:text-[40px] font-forum  ">{t('roomInner.descr')}</h2>
                                 <div
@@ -197,68 +193,6 @@ const Page = ({roomCatalog}) => {
                                 <ButtonUI content={t('btn.booking')} hrefToPage={`/booking/?room-type=${roomTypes.filter((roomType) => roomType.roomId === id)[0].beRoomType}`}/>
                             </div>
                         </div>
-                        {/*<div className="col-span-1">
-                            <div className=" border border-first">
-                                <div className="flex flex-col items-center p-3 lg:p-5">
-                                    <h3 className="font-normal text-currentBlue text-2xl md:text-3xl lg:text-[40px] mb-2">{t('roomInner.bookingTitle')}</h3>
-                                    <p className="font-normal text-currentBlue text-base md:text-lg lg:text-2xl"><span>{room?.price} </span>
-                                     <span>{t("rooms.priceSymbol")}</span>
-                                    </p>
-                                    <div
-                                        className="flex flex-col gap-[11px] w-full mt-5 text-currentBlack font-jost font-normal">
-                                        <DropdownBooking
-                                            title={t('index.headerBooking.checkIn')}
-                                            subTitle={timeBooking[0] ? moment(timeBooking[0]).format('ll') : t('index.headerBooking.entryDay')}
-
-                                            isInner={true}
-                                        >
-
-                                            <DatePicker
-                                                selected={null}
-                                                onChange={handleDateChangeStart}
-                                                startDate={startDate}
-                                                dataFormat={'dd/MM/yyyy'}
-                                                inline
-                                                minDate={moment().add(0, 'days').toDate()}
-                                            />
-                                        </DropdownBooking>
-                                        <DropdownBooking
-                                            title={t('index.headerBooking.departure')}
-                                            subTitle={timeBooking[1] ? moment(timeBooking[1]).format('ll') : t('index.headerBooking.departureDay')}
-
-                                            isInner={true}
-                                        >
-
-                                            <DatePicker
-                                                selected={null}
-                                                onChange={handleDateChangeEnd}
-                                                startDate={endDate}
-                                                dataFormat={'dd/MM/yyyy'}
-                                                inline
-                                                minDate={moment().add(0, 'days').toDate()}
-                                            />
-                                        </DropdownBooking>
-                                        <div className={'grid grid-cols-2 gap-2'}>
-                                            <DropdownBooking
-                                                title={t('index.headerBooking.adults')}
-                                                subTitle={` ${countOlderBooking}  `}
-                                                isInner={true}
-                                            > <NumberGuests isInner={true} children={false}/>
-                                            </DropdownBooking>
-                                            <DropdownBooking
-                                                title={t('index.headerBooking.children')}
-                                                subTitle={` ${countChildrenBooking} `}
-                                                isInner={true}
-                                            > <NumberGuests isInner={true} adults={false}/>
-                                            </DropdownBooking>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="flex flex-col gap-5 md:gap-[30px] pb-3 lg:pb-5 px-3 lg:px-5">
-                                    <ButtonUI content={t('btn.booking')}/>
-                                </div>
-                            </div>
-                        </div>*/}
                     </div>
                 </div>
             </section>
@@ -266,7 +200,7 @@ const Page = ({roomCatalog}) => {
                 <div className={'pb-5 md:pb-10'}>
                     <RoomsSlider room={roomCatalog}/>
                 </div>
-                <div data-aos={'fade-up'} data-aos-delay={50} className="flex flex-col items-center md:pb-20 pb-10">
+                <div  className="flex flex-col items-center md:pb-20 pb-10">
                     <ButtonUI borderBtn borderWhite content={t('btn.moreAll')} hrefToPage={'/room'}/>
                 </div>
             </SectionUI>
@@ -301,9 +235,9 @@ const SwiperInner = ({ images , title }) => {
                     >
                         {images?.map((image) => (
                             <SwiperSlide key={image?.id} className={'relative w-full h-full'}>
-                                <a href={image.image} className="lightgallery-item" data-src={image.image}>
+                                <div  className="lightgallery-item" data-src={image.image}>
                                     <ImageUI alt={title} src={image.image} imageStyle={'object-bottom'} />
-                                </a>
+                                </div>
                             </SwiperSlide>
                         ))}
 
