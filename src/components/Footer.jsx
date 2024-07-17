@@ -26,7 +26,8 @@ const Footer = () => {
         contactRefetch()
     } , [])
     return (
-        <footer className="w-full bg-currentBlue bg-[url('/image/bg-noise.jpg')]">
+        // bg-[url('/image/bg-noise.jpg')]
+        <footer className="w-full bg-currentBlue ">
             <div className="container">
                 <div className=" py-6 md:py-10 flex lg:flex-row flex-col gap-10 lg:gap-20 xl:gap-24 2xl:gap-32 items-center lg:items-start  font-jost">
                     <Link href="/" className="w-44 h-auto  md:w-60 flex-shrink-0  block relative">

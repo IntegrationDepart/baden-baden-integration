@@ -3,8 +3,10 @@ import {ImageUI, SectionTitle} from "@/components/index";
 
 const SectionUI = ({children , subTitle , title ,modeBlue =false  , cityBg , isNoContainer ,isFalsePadding = false , isEmbroidery = false }) => {
   return (
+      // bg-[url('/image/bg-noise.jpg')]
       <section
-          className={`${isFalsePadding ? '' : 'pt-[50px] md:pt-20'}  ${modeBlue ? "bg-[url('/image/bg-noise.jpg')]" : 'bg-white'} relative `}>
+
+          className={`${isFalsePadding ? '' : 'pt-[50px] md:pt-20'}  ${modeBlue ? "bg-currentBlue" : 'bg-white'} relative `}>
         {
             cityBg &&
             <div className={" h-[400px] sm:h-[500px] left-0 md:left-[-10%] bottom-0 absolute w-full lg:w-[50%] "}>
