@@ -1,15 +1,11 @@
 'use client'
-import {ButtonUI, DropdownBooking, ImageUI, NumberGuests, RoomsSlider, SectionUI} from "@/components";
+import {ButtonUI,  ImageUI,  RoomsSlider, SectionUI} from "@/components";
 import {LuBath, LuBedDouble, LuFootprints, LuMaximize, LuSnowflake, LuUsers} from "react-icons/lu";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {FreeMode, Grid, Navigation, Thumbs} from 'swiper/modules';
 import {useEffect, useState} from "react";
 import {GrNext, GrPrevious} from "react-icons/gr";
-import moment from "moment/moment";
-import DatePicker from "react-datepicker";
 import {useTranslation} from "react-i18next";
-import {useDispatch, useSelector} from "react-redux";
-import {changleEndTimeBooking, changleStartTimeBooking, changleTimeBooking} from "@/slice/booking";
 import {BiCoffee} from "react-icons/bi";
 import {RiWindyLine} from "react-icons/ri";
 import {FaTv} from "react-icons/fa";
@@ -19,27 +15,15 @@ import {useParams} from "next/navigation";
 import {useQuery} from "react-query";
 import {langSelect} from "@/helper";
 import BeSearchForm from "../be-forms/be-search-form";
-
-
-
-// import { useState } from 'react';
-// import SwiperCore, { Navigation, Thumbs, FreeMode, Grid } from 'swiper';
-// import { Swiper, SwiperSlide } from 'swiper/react';
 import LightGallery from 'lightgallery/react';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
-
-// import 'swiper/swiper-bundle.min.css';
 import 'lightgallery/css/lightgallery.css';
 import 'lightgallery/css/lg-thumbnail.css';
 import 'lightgallery/css/lg-zoom.css';
-// import { GrNext, GrPrevious } from 'react-icons/gr';
 
-// SwiperCore.use([Navigation, Thumbs, FreeMode, Grid]);
 const Page = ({roomCatalog}) => {
-    const {t} = useTranslation()
-    const {lang} = useSelector(state => state.langSlice)
-    const dispatch = useDispatch();
+    const {t , i18n} = useTranslation()
     const {id} = useParams()
     const {data: room, refetch: refetchRoom, isLoading: isLoadingRoom} = useQuery(["room", id], () =>
         apiService.getDataByID('/rooms', id), {enabled: false}
@@ -108,20 +92,20 @@ const Page = ({roomCatalog}) => {
         }
     ]
 
-    const handleDateChangeStart = (date) => {
-
-        dispatch(changleStartTimeBooking(`${date}`))
-        setStartDate(date)
-    };
-    const handleDateChangeEnd = (date) => {
-
-        dispatch(changleEndTimeBooking(`${date}`))
-        setEndDate(date)
-    };
-    useEffect(() => {
-        const thisDay = moment().add(0, 'days').toDate()
-        dispatch(changleTimeBooking([`${thisDay}`, `${thisDay}`]))
-    }, []);
+    // const handleDateChangeStart = (date) => {
+    //
+    //     dispatch(changleStartTimeBooking(`${date}`))
+    //     setStartDate(date)
+    // };
+    // const handleDateChangeEnd = (date) => {
+    //
+    //     dispatch(changleEndTimeBooking(`${date}`))
+    //     setEndDate(date)
+    // };
+    // useEffect(() => {
+    //     const thisDay = moment().add(0, 'days').toDate()
+    //     dispatch(changleTimeBooking([`${thisDay}`, `${thisDay}`]))
+    // }, []);
 
 
     useEffect(() => {
@@ -134,13 +118,13 @@ const Page = ({roomCatalog}) => {
             <SectionUI isEmbroidery={true}>
                 <BeSearchForm/>
             </SectionUI>
-            <SectionUI title={langSelect(lang ,room?.title_ru , room?.title_en ,room?.title_uz )}
+            <SectionUI title={langSelect(i18n.language ,room?.title_ru , room?.title_en ,room?.title_uz )}
             >
 
             </SectionUI>
             <section className=" mb-7 sm:mb-14 md:mb-20 mt-5 md:mt-10">
                 <div className="container space-y-5 md:space-y-10">
-                    <SwiperInner images={room?.images} title={langSelect(lang ,room?.title_ru , room?.title_en ,room?.title_uz )}/>
+                    <SwiperInner images={room?.images} title={langSelect(i18n.language ,room?.title_ru , room?.title_en ,room?.title_uz )}/>
                     <div className="grid grid-cols-1  gap-5">
                         <div className="col-span-1 flex flex-col gap-5 md:gap-10">
                             <div className="flex flex-col gap-3 md:gap-5">
@@ -161,7 +145,7 @@ const Page = ({roomCatalog}) => {
                                     </div>
                                 </div>
                                 <p className="text-currentBlack font-jost  md:text-lg text-start">
-                                    {langSelect(lang ,room?.text_ru , room?.text_en ,room?.text_uz )}
+                                    {langSelect(i18n.language ,room?.text_ru , room?.text_en ,room?.text_uz )}
                                 </p>
                             </div>
                             <div className="flex flex-col gap-3 md:gap-6 font-forum">
@@ -183,7 +167,7 @@ const Page = ({roomCatalog}) => {
                                 <ul className="list-disc text-currentBlack font-jost font-normal   md:text-lg ml-5">
                                     {
                                         room?.included_facilities?.map(included=>(
-                                            <li key={included.id}>  {langSelect(lang ,included?.title_ru , included?.title_en ,included?.title_uz )}</li>
+                                            <li key={included.id}>  {langSelect(i18n.language ,included?.title_ru , included?.title_en ,included?.title_uz )}</li>
 
                                         ))
                                     }

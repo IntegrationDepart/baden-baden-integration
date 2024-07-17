@@ -9,7 +9,7 @@ const nextConfig = {
         pathname: '**', // This allows images from any path on the specified domain
       },
     ],
-    deviceSizes: [450, 640, 768, 1024, 1280, 1536],
+    deviceSizes: [450,  768, 1024, 1536],
   },
 };
 

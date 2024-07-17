@@ -3,8 +3,8 @@ import BeReputationForm from "./be-forms/be-reputation-form";
 const Header = ({title, image}) => {
   return (
       <>
-        <section className='relative w-full h-screen'>
-          <div className={`w-full h-full relative z-[0]`}>
+        <section className='relative w-full h-screen overflow-hidden'>
+          <div className={`w-full h-full relative z-[0] animate-scale-up-down-100s`}>
             <ImageUI src={image} alt={title} priority={true}
                      imageStyle={'object-center'}
                      card={false}/>

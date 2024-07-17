@@ -3,7 +3,9 @@ import { ImageUI } from "@/components/index";
 import LightGallery from 'lightgallery/react';
 import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgZoom from 'lightgallery/plugins/zoom';
-
+import 'lightgallery/css/lightgallery.css';
+import 'lightgallery/css/lg-thumbnail.css';
+import 'lightgallery/css/lg-zoom.css'
 const GallerySection = ({ gallery, isForIndex, isGalleryPage }) => {
   const onInit = () => {
     // console.log('lightGallery has been initialized');

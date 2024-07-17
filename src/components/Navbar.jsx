@@ -11,12 +11,17 @@ import {useDispatch, useSelector} from "react-redux";
 import {changleLang} from "@/slice/lang";
 import {useQuery} from "react-query";
 import apiService from "@/service/api";
+import {CiSearch} from "react-icons/ci";
 
 const Navbar = () => {
     const [sidebar, setSidebar] = useState(false)
     const [isScroll, setIsScroll] = useState(false)
+    // const [search, setSearch] = useState(false);
     const router = usePathname()
-
+    // const handleSearch = () => {
+    //     setSearch(true)
+    //     document.body.classList.add('overflow-hidden')
+    // }
     const handleBurger = () => {
         setSidebar(!sidebar)
     }
@@ -49,8 +54,10 @@ const Navbar = () => {
     const {lang} = useSelector(state => state.langSlice)
 
     return (
+        //bg-[url('/image/bg-noise.jpg')]
         <nav
-            className={`${router === '/' ? isScroll ? "bg-currentBlue bg-[url('/image/bg-noise.jpg')] " : "bg-transparent " : "bg-currentBlue bg-[url('/image/bg-noise.jpg')] "} ${isScroll ? "md:-translate-y-10 border-b border-white" : ""} duration-300 top-0 fixed  left-0 z-[100] w-full`}>
+
+            className={`${router === '/' ? isScroll ? "bg-currentBlue " : "bg-transparent " : "bg-currentBlue  "} ${isScroll ? "md:-translate-y-10 border-b border-white" : ""} duration-300 top-0 fixed  left-0 z-[100] w-full`}>
             <div className={`relative w-full z-20 py-[10px] border-b-[0.5px] border-navBorder opacity-70  hidden md:block `}>
                 <div className="container">
                     <div
@@ -75,8 +82,9 @@ const Navbar = () => {
                             <LuAlignLeft className={'text-white text-xl  cursor-pointer'}
                                          onClick={handleBurger}/>
                         </div>
+                        {/*bg-[url('/image/bg-noise.jpg')]*/}
                         <div
-                             className={`  duration-700 z-[100] top-[70px] ${sidebar ? 'left-0' : '-left-full'} !box-border fixed w-full md:w-[80%] bg-[url('/image/bg-noise.jpg')] bg-currentBlue   p-5 h-[calc(100vh-70px)] flex flex-col justify-between border border-currentBlue  md:hidden`}>
+                             className={`  duration-700 z-[100] top-[70px] ${sidebar ? 'left-0' : '-left-full'} !box-border fixed w-full md:w-[80%]  bg-currentBlue   p-5 h-[calc(100vh-70px)] flex flex-col justify-between border border-currentBlue  md:hidden`}>
                             <ul className={'flex flex-col gap-4 lg:gap-7 items-center '}>
                                 {
                                     navLink.map((link, ind) => {
@@ -131,20 +139,24 @@ const Navbar = () => {
                         <ul className="md:flex justify-between items-center w-1/3 hidden">
                             {
                                 navLink.slice(3, 6).map((link, ind) => {
-                                    const active = router === link.link
+                                        const active = router === link.link
 
-                                    return (
-                                        <li key={ind}><Link href={link.link}
-                                                            className={`${active ? 'border-b border-b-white pb-[1px]' : "border border-transparent px-1.5 py-0.5"}`}>{t(`${link.text}`)} </Link></li>
-                                    )
+                                        return (
+                                            <li key={ind}><Link href={link.link}
+                                                                className={`${active ? 'border-b border-b-white pb-[1px]' : "border border-transparent px-1.5 py-0.5"}`}>{t(`${link.text}`)} </Link>
+                                            </li>
+                                        )
                                     }
                                 )
                             }
-
+                            <li>
+                                <CiSearch className='text-2xl' onClick={() => handleSearch()}/>
+                            </li>
                         </ul>
                         <div className="md:hidden">
                             <DropdownLang/>
                         </div>
+                        {/*<NavSearch search={search} setSearch={setSearch} />*/}
                     </div>
                 </div>
             </div>
@@ -242,3 +254,70 @@ const DropdownLang = () => {
         </>
     )
 }
+
+//
+// const NavSearch = ({ search, setSearch }) => {
+//     const queryClient = useQueryClient();
+//     const [inputValue, setInputValue] = useState('');
+//
+//     const closeSearch = () => {
+//         setSearch(false);
+//         document.body.classList.remove('overflow-hidden');
+//     }
+//
+//     const { refetch, data, isSuccess } = useQuery(
+//         'search-input',
+//         () => apiService.getData(`/rooms/?search=${inputValue}`),
+//         { enabled: false }
+//     );
+//
+//     const handleFormSubmit = (e) => {
+//         e.preventDefault();
+//         refetch();
+//     };
+//
+//     return (
+//         search &&
+//         <div
+//             className={`w-screen h-screen fixed top-0 py-20 left-0 bg-black/70 z-[999] duration-300`}
+//             onClick={() => closeSearch()}>
+//             <div className='container-fluid'>
+//                 <div className='max-w-[860px] mx-auto 3xl:max-w-[1070px] space-y-5' onClick={(e) => e.stopPropagation()}>
+//                     <div className='flex justify-between items-center text-white'>
+//                         <h2 className='text-lg xl:text-2xl'>Поисковый центр</h2>
+//                         <IoMdClose onClick={() => closeSearch()} className='text-3xl 2xl:text-4xl cursor-pointer' />
+//                     </div>
+//                     <form onSubmit={handleFormSubmit} className='border-2 w-full border-currentBlue grid grid-cols-4 md:grid-cols-5'>
+//                         <input
+//                             type="text"
+//                             value={inputValue}
+//                             onChange={(e) => setInputValue(e.target.value)}
+//                             className='w-full pl-4 bg-white font-montserrat col-span-3 text-sm md:text-base md:col-span-4 outline-none py-2 2xl:py-3 text-currentBlue '
+//                             placeholder='Найдите или введите ключевое слово.'
+//                         />
+//                         <ButtonUI type='submit' isBorderBtn={true} content={'Поиск'} />
+//                     </form>
+//
+//                     {isSuccess && (
+//                         data?.count > 0 ? (
+//                             <div className='grid grid-cols-1 gap-3 w-full h-[70vh] overflow-y-scroll'>
+//                                 {data.results.map(card => (
+//                                     <div key={card.id}>
+//                                         <RoomCard card={card} />
+//                                     </div>
+//                                 ))}
+//                             </div>
+//                         ) : (
+//                             <div className='flex flex-col items-center gap-5'>
+//                                 <h2 className='text-4xl text-center font-elegance'>{t('notFound.text')}</h2>
+//                                 <div className='w-full md:w-[500px] aspect-video lg:w-[600px] relative'>
+//                                     <ImgUI src='/image/no-room-found.png' objectFitContain alt='not found' />
+//                                 </div>
+//                             </div>
+//                         )
+//                     )}
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
