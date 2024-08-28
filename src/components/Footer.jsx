@@ -11,13 +11,11 @@ import {useSelector} from "react-redux";
 import {BiLogoTelegram} from "react-icons/bi";
 import {useQuery} from "react-query";
 import apiService from "@/service/api";
-import {usePathname} from "next/navigation";
 import {useEffect} from "react";
 
 const Footer = () => {
     const {t} = useTranslation()
     const {lang} = useSelector(state => state.langSlice)
-    const router = usePathname()
     const { data: contact  , refetch: contactRefetch,  } = useQuery("getContact", () =>
         apiService.getData( '/about/contact') , { enabled: false}
     );
