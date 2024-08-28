@@ -84,7 +84,7 @@ const Navbar = () => {
                         </div>
                         {/*bg-[url('/image/bg-noise.jpg')]*/}
                         <div
-                             className={`  duration-700 z-[100] top-[70px] ${sidebar ? 'left-0' : '-left-full'} !box-border fixed w-full md:w-[80%]  bg-currentBlue   p-5 h-[calc(100vh-70px)] flex flex-col justify-between border border-currentBlue  md:hidden`}>
+                             className={`  duration-700 z-[100] top-[100px] ${sidebar ? 'left-0' : '-left-full'} !box-border fixed w-full md:w-[80%]  bg-currentBlue   p-5 h-[calc(100vh-70px)] flex flex-col justify-between border border-currentBlue  md:hidden`}>
                             <ul className={'flex flex-col gap-4 lg:gap-7 items-center '}>
                                 {
                                     navLink.map((link, ind) => {
@@ -128,7 +128,7 @@ const Navbar = () => {
                         <Link href="/"
                               className="  block static md:absolute left-1/2 top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
                             <div
-                                className={'h-[50px] w-[90px] md:w-[200px] md:h-[60px] flex gap-3 items-center realative'}>
+                                className={'h-[70px] w-[110px] md:w-[200px] md:h-[60px] flex gap-3 items-center relative'}>
                                 <ImageUi
                                     alt={'baden baden logo'}
                                     src="/image/baden-baden-logo-white 1.png"

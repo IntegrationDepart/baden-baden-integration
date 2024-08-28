@@ -90,24 +90,25 @@ const Footer = () => {
                             }
 
                         </ul>
-                        {router !== '/booking' &&
+                        {/*{router !== '/booking' &&*/}
                         <div className="col-span-2 flex flex-col gap-4 order-3 sm:order-4 mt-5 sm:mt-0 lg:text-start sm:text-center">
                             <p>{t('footer.ourSocials')}</p>
                             <div className="flex items-center lg:justify-start sm:justify-center gap-4 lg:gap-[30px]">
                                 <a target="_blank"  href={`${contact?.instagram}`}
-                                   className="bg-bgSocial  p-2 rounded-full">
+                                   className="bg-bgSocial  p-[7.5px] rounded-full flex-shrink-0">
                                     <RiInstagramLine className={'text-currentBlue text-base'}/>
                                 </a>
                                 <a href={`${contact?.facebook}`} target="_blank"
-                                   className="bg-bgSocial p-[7.5px] rounded-full">
+                                   className="bg-bgSocial p-[7.5px] rounded-full flex-shrink-0">
                                     <FaFacebookF className={'text-currentBlue text-base'}/>
                                 </a>
                                 <a href={`${contact?.telegram}`} target="_blank"
-                                   className="bg-bgSocial p-[7.5px] rounded-full">
+                                   className="bg-bgSocial p-[7.5px] rounded-full flex-shrink-0">
                                     <BiLogoTelegram   className={'text-currentBlue text-base'}/>
                                     </a>
                             </div>
-                        </div>}
+                        </div>
+
                     </div>
                 </div>
             </div>
