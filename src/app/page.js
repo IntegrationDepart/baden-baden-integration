@@ -13,8 +13,8 @@ async function getHome() {
   const additionalServices = await resAdditionalServices.json()
 
   // resAboutFacilities
-  const resAboutFacilities = await  fetch(`${process.env.NEXT_PUBLIC_API_URL}/about/about-facilities/`, { cache: 'no-store' })
-  const aboutFacilities = await resAboutFacilities.json()
+  // const resAboutFacilities = await  fetch(`${process.env.NEXT_PUBLIC_API_URL}/about/about-facilities/`, { cache: 'no-store' })
+  // const aboutFacilities = await resAboutFacilities.json()
 
   // resAboutTitle
 
@@ -47,8 +47,8 @@ async function getHome() {
   const room = await resRoom.json()
 
    // resFeedback
-   const resFeedback = await  fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback-index/`, { cache: 'no-store' })
-   const feedback = await resFeedback.json()
+   // const resFeedback = await  fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback-index/`, { cache: 'no-store' })
+   // const feedback = await resFeedback.json()
 
 
   // resFeedbackTitle
@@ -56,7 +56,7 @@ async function getHome() {
   const feedbackTitle = await resFeedbackTitle.json()
 
 
-  return [banner , aboutTitle, additionalServices ,aboutTitleAmenities , amenities , landmarkcategories , gallery ,news ,newsTitle ,room, feedback,feedbackTitle , aboutFacilities]
+  return [banner , aboutTitle, additionalServices ,aboutTitleAmenities , amenities , landmarkcategories , gallery ,news ,newsTitle ,room,feedbackTitle ]
 }
 
 export const  metadata = {
@@ -73,9 +73,9 @@ export const  metadata = {
 }
 
 export default async function Home() {
-  const [banner , aboutTitle , additionalServices , aboutTitleAmenities ,amenities ,landmarkcategories ,gallery ,news , newsTitle ,room, feedback,feedbackTitle] = await getHome()
+  const [banner , aboutTitle , additionalServices , aboutTitleAmenities ,amenities ,landmarkcategories ,gallery ,news , newsTitle ,room,feedbackTitle] = await getHome()
   return (
-      <HomeContent banner={banner} aboutTitle={aboutTitle} additionalServices={additionalServices} aboutTitleAmenities={aboutTitleAmenities} amenities={amenities} landmarkcategories={landmarkcategories} gallery={gallery} news={news?.results}  newsTitle={newsTitle} room={room} feedback={feedback} feedbackTitle={feedbackTitle}/>
+      <HomeContent banner={banner} aboutTitle={aboutTitle} additionalServices={additionalServices} aboutTitleAmenities={aboutTitleAmenities} amenities={amenities} landmarkcategories={landmarkcategories} gallery={gallery} news={news?.results}  newsTitle={newsTitle} room={room}  feedbackTitle={feedbackTitle}/>
   );
 }
 
