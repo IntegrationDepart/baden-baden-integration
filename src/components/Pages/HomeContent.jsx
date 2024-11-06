@@ -26,7 +26,6 @@ const HomeContent = ({
                          feedbackTitle
                      }) => {
     const {t ,i18n} = useTranslation()
-    console.log(feedbackTitle)
   return (
       <>
 
