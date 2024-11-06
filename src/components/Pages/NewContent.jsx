@@ -82,7 +82,7 @@ const NewContent = ({titleNew}) => {
                         image={news?.image}
                         subTitle={langSelect(lang ,news?.text_ru, news?.text_en , news?.text_uz )}
                         title={langSelect(lang ,news?.title_ru, news?.title_en , news?.title_uz )}
-                        link={`news/${news?.slug}`}/>
+                        link={`${news?.link}`}/>
                 ))
               }
 
