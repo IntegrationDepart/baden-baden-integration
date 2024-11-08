@@ -52,11 +52,11 @@ async function getHome() {
 
 
   // resFeedbackTitle
-  const resFeedbackTitle = await  fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback-section-title/`, { cache: 'no-store' })
-  const feedbackTitle = await resFeedbackTitle.json()
+  // const resFeedbackTitle = await  fetch(`${process.env.NEXT_PUBLIC_API_URL}/feedback-section-title/`, { cache: 'no-store' })
+  // const feedbackTitle = await resFeedbackTitle.json()
 
 
-  return [banner , aboutTitle, additionalServices ,aboutTitleAmenities , amenities , landmarkcategories , gallery ,news ,newsTitle ,room,feedbackTitle ]
+  return [banner , aboutTitle, additionalServices ,aboutTitleAmenities , amenities , landmarkcategories , gallery ,news ,newsTitle ,room ]
 }
 
 export const  metadata = {
@@ -73,9 +73,9 @@ export const  metadata = {
 }
 
 export default async function Home() {
-  const [banner , aboutTitle , additionalServices , aboutTitleAmenities ,amenities ,landmarkcategories ,gallery ,news , newsTitle ,room,feedbackTitle] = await getHome()
+  const [banner , aboutTitle , additionalServices , aboutTitleAmenities ,amenities ,landmarkcategories ,gallery ,news , newsTitle ,room] = await getHome()
   return (
-      <HomeContent banner={banner} aboutTitle={aboutTitle} additionalServices={additionalServices} aboutTitleAmenities={aboutTitleAmenities} amenities={amenities} landmarkcategories={landmarkcategories} gallery={gallery} news={news?.results}  newsTitle={newsTitle} room={room}  feedbackTitle={feedbackTitle}/>
+      <HomeContent banner={banner} aboutTitle={aboutTitle} additionalServices={additionalServices} aboutTitleAmenities={aboutTitleAmenities} amenities={amenities} landmarkcategories={landmarkcategories} gallery={gallery} news={news?.results}  newsTitle={newsTitle} room={room}  />
   );
 }
 

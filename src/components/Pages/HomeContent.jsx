@@ -23,7 +23,6 @@ const HomeContent = ({
                          news,
                          newsTitle,
                          room,
-                         feedbackTitle
                      }) => {
     const {t ,i18n} = useTranslation()
   return (
@@ -108,13 +107,13 @@ const HomeContent = ({
         >
             <NewsSlider news={news}/>
         </SectionUI>
-        <SectionUI title={langSelect(i18n.language,feedbackTitle?.title_ru , feedbackTitle?.title_en ,feedbackTitle?.title_uz )}
-                   subTitle={langSelect(i18n.language,feedbackTitle?.text_ru , feedbackTitle?.text_en ,feedbackTitle?.text_uz )}
-        >
+        {/*<SectionUI title={langSelect(i18n.language,feedbackTitle?.title_ru , feedbackTitle?.title_en ,feedbackTitle?.title_uz )}*/}
+        {/*           subTitle={langSelect(i18n.language,feedbackTitle?.text_ru , feedbackTitle?.text_en ,feedbackTitle?.text_uz )}*/}
+        {/*>*/}
           {/*<div className={'md:pb-20 pb-10 flex gap-10'}>*/}
           {/*  <ReviewsSlider feedbacks={feedback && feedback}/>*/}
           {/*</div>*/}
-        </SectionUI>
+        {/*</SectionUI>*/}
       </>
   );
 };
