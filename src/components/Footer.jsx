@@ -1,3 +1,4 @@
+'use client'
 import Link from "next/link";
 import {navLink} from "@/constants/routeConfig";
 import {FaFacebookF} from "react-icons/fa";

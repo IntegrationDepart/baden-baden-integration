@@ -1,3 +1,5 @@
+'use client'
+
 import {ButtonUI, DropdownBooking, NumberGuests} from "@/components";
 import {useState} from "react";
 import DatePicker from 'react-datepicker'

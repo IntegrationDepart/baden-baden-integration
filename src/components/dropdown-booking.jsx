@@ -1,3 +1,4 @@
+'use client'
 import {FaAngleDown} from "react-icons/fa6";
 import {CgArrowLongRight} from "react-icons/cg";
 import {useEffect, useRef, useState} from "react";
