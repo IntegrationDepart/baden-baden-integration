@@ -26,8 +26,8 @@ const Layout = ({children}) => {
 
     useEffect(() => {
         AOS.init({
-            easing: 'ease', // default easing for AOS animations
-            once: true // whether animation should happen only once - while scrolling down
+            easing: 'ease',
+            once: true
         });
     }, []);
     const queryClient = new QueryClient();

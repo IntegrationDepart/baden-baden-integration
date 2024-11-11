@@ -28,9 +28,9 @@ const Footer = () => {
         <footer className="w-full bg-currentBlue ">
             <div className="container">
                 <div className=" py-6 md:py-10 flex lg:flex-row flex-col gap-10 lg:gap-20 xl:gap-24 2xl:gap-32 items-center lg:items-start  font-jost">
-                    <Link href="/" className="w-44 h-auto  md:w-60 flex-shrink-0  block relative">
-                        <img src="/image/hotel-pro-white.png" alt="hotel-pro" className="w-full h-full object-contain"/>
-                    </Link>
+                    {/*<Link href="/" className="w-44 h-auto  md:w-60 flex-shrink-0  block relative">*/}
+                    {/*    <img src="/image/hotel-pro-white.png" alt="hotel-pro" className="w-full h-full object-contain"/>*/}
+                    {/*</Link>*/}
                     <div
                         className="grid grid-cols-3 sm:grid-cols-6  gap-x-6  sm:gap-x-10 md:gap-x-12 lg:gap-x-24 xl:gap-x-36 text-white font-jost">
                         <ul className="col-span-2 flex flex-col gap-5 order-1  text-sm">
