@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+
 import { SectionUI} from "@/components";
 import {useTranslation} from "react-i18next";
 

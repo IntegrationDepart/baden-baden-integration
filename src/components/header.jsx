@@ -1,4 +1,4 @@
-import {HeaderBooking, ImageUI} from "@/components";
+import {ImageUI} from "@/components";
 import BeReputationForm from "./be-forms/be-reputation-form";
 const Header = ({title, image}) => {
   return (

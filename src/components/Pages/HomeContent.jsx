@@ -6,7 +6,7 @@ import {
   Header,
   HotelAmenitiesCard,
   RoomsSlider,
-  SectionUI, NewsSlider, ImageUI, ReviewsSlider,
+  SectionUI, NewsSlider, ImageUI,
 } from "@/components";
 import {useTranslation} from "react-i18next";
 import {langSelect} from "@/helper";

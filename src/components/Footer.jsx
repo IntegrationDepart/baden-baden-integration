@@ -79,18 +79,23 @@ const Footer = () => {
                                     )
                                 )
                             }
+                            < li ><Link href={'/reviews'} className={'hover:border-b hover:border-white border-b border-transparent duration-300'}>{t(
+                                'reviews.title'
+                            )} </Link></li>
                         </ul>
                         <ul className=" whitespace-nowrap flex flex-col gap-5 order-4 sm:order-3 font-medium font-jost">
                             {
                                 navLink.slice(3, 6).map((link, ind) => (
-                                        <li key={ind}><Link href={link.link} className={'hover:border-b hover:border-white border-b border-transparent duration-300'}>{t(`${link.text}`)} </Link></li>
+                                        <li key={ind}><Link href={link.link}
+                                                            className={'hover:border-b hover:border-white border-b border-transparent duration-300'}>{t(`${link.text}`)} </Link>
+                                        </li>
                                     )
                                 )
-                            }
 
+                            }
                         </ul>
-                        {/*{router !== '/booking' &&*/}
-                        <div className="col-span-2 flex flex-col gap-4 order-3 sm:order-4 mt-5 sm:mt-0 lg:text-start sm:text-center">
+                        <div
+                            className="col-span-2 flex flex-col gap-4 order-3 sm:order-4 mt-5 sm:mt-0 lg:text-start sm:text-center">
                             <p>{t('footer.ourSocials')}</p>
                             <div className="flex items-center lg:justify-start sm:justify-center gap-4 lg:gap-[30px]">
                                 <a target="_blank"  href={`${contact?.instagram}`}
