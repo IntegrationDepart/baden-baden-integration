@@ -5,3 +5,4 @@ export { default as PageInner } from './Page-Inner';
 export { default as NewContent } from './NewContent';
 export { default as HomeContent } from './HomeContent';
 export { default as GalleryContent } from './GalleryContent';
+export { default as ReviewsContent } from './ReviewsContent';
